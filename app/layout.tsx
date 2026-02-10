@@ -4,7 +4,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://radifylighting.com"),
+  metadataBase: new URL("https://radifylighting.in"),
   title: {
     default: "Radify Lighting | Premium Architectural & Smart Lighting",
     template: "%s | Radify Lighting",
@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Radify Lighting",
     description: "Premium architectural & smart lighting solutions.",
-    url: "https://radifylighting.com",
+    url: "https://radifylighting.in",
     siteName: "Radify Lighting",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/radify_og.png",
         width: 1200,
         height: 630,
       },
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Radify Lighting",
     description: "Premium architectural & smart lighting solutions.",
-    images: ["/og-image.jpg"],
+    images: ["/radify_og.png"],
   },
 };
 
