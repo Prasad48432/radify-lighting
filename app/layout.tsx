@@ -14,16 +14,16 @@ export async function generateMetadata(): Promise<Metadata> {
       icon: "/favicon.ico",
     },
     openGraph: {
-      title: process.env.NEXT_PUBLIC_APP_NAME,
+      title: "Radify Lighting Solutions",
       description:
         "Radify Lighting provides premium architectural, decorative and smart lighting solutions for modern homes and commercial spaces.",
       url: "https://radifylighting.in",
       images: [
         {
-          url: "/og_image.png",
+          url: "https://radifylighting.in/og_image.png", // ✅ FULL URL
           width: 1200,
           height: 630,
-          alt: `Radify Lighting Solutions's OpenGraph Image`,
+          alt: "Radify Lighting Solutions OpenGraph Image",
         },
       ],
       siteName: "Radify Lighting Solutions",
@@ -33,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Radify Lighting Solutions",
       description:
         "Radify Lighting provides premium architectural, decorative and smart lighting solutions for modern homes and commercial spaces.",
-      images: ["/og_image.png"],
+      images: ["https://radifylighting.in/og_image.png"], // ✅ FULL URL
     },
   };
 }
