@@ -1,64 +1,87 @@
 import Link from "next/link";
+import { MapPin, Phone, Mail } from "lucide-react";
 
-export default function Footer() {
-  return (
-    <footer className="bg-zinc-950 border-t border-zinc-800 mt-20">
-      <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-12">
-        {/* Brand */}
-        <div>
-          <h3 className="text-2xl font-bold">
-            Radify <span className="text-amber-500">Lighting</span>
-          </h3>
-          <p className="mt-4 text-sm text-zinc-400">
-            Redefining modern illumination with premium architectural and smart
-            lighting solutions.
-          </p>
-        </div>
-
-        {/* Quick Links */}
-        <div>
-          <h4 className="font-semibold mb-4">Company</h4>
-          <ul className="space-y-3 text-sm text-zinc-400">
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="/products">Products</Link>
-            </li>
-            <li>
-              <Link href="/projects">Projects</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Services */}
-        <div>
-          <h4 className="font-semibold mb-4">Solutions</h4>
-          <ul className="space-y-3 text-sm text-zinc-400">
-            <li>Architectural Lighting</li>
-            <li>Smart Lighting</li>
-            <li>Commercial Projects</li>
-            <li>Outdoor Illumination</li>
-          </ul>
-        </div>
-
-        {/* Contact */}
-        <div>
-          <h4 className="font-semibold mb-4">Contact</h4>
-          <ul className="space-y-3 text-sm text-zinc-400">
-            <li>Email: info@radifylighting.com</li>
-            <li>Phone: +91 98765 43210</li>
-            <li>Location: India</li>
-          </ul>
-        </div>
+const Footer = () => (
+  <footer className="bg-secondary border-t border-border">
+    <div className="container mx-auto px-4 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+      {/* Brand */}
+      <div>
+        <h3 className="font-display text-xl font-bold mb-3">
+          Radify<span className="text-primary">.</span>
+        </h3>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Complete lighting solutions — from product selection to full project
+          execution. Indoor &amp; outdoor.
+        </p>
       </div>
 
-      <div className="border-t border-zinc-800 py-6 text-center text-sm text-zinc-500">
-        © {new Date().getFullYear()} Radify Lighting. All rights reserved.
+      {/* Quick links */}
+      <div>
+        <h4 className="text-sm font-semibold mb-3 uppercase tracking-wider">
+          Quick Links
+        </h4>
+        <ul className="space-y-2 text-sm text-muted-foreground">
+          {[
+            { label: "Home", path: "/" },
+            { label: "Services", path: "/services" },
+            { label: "Portfolio", path: "/portfolio" },
+            { label: "Testimonials", path: "/testimonials" },
+            { label: "Contact", path: "/contact" },
+          ].map((l) => (
+            <li key={l.path}>
+              <Link
+                href={l.path}
+                className="hover:text-primary transition-colors"
+              >
+                {l.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
-    </footer>
-  );
-}
+
+      {/* Contact info */}
+      <div>
+        <h4 className="text-sm font-semibold mb-3 uppercase tracking-wider">
+          Contact
+        </h4>
+        <ul className="space-y-3 text-sm text-muted-foreground">
+          <li className="flex items-start gap-2">
+            <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
+            <span>
+              5-275, Ayyappa Nagar Colony, Chandra Nagar Colony, Bolarum,
+              Secunderabad, Telangana 500010
+            </span>
+          </li>
+          <li className="flex items-center gap-2">
+            <Phone className="h-4 w-4 shrink-0 text-primary" />
+            <a
+              href="tel:+919440311081"
+              className="hover:text-primary transition-colors"
+            >
+              +91 94403 11081
+            </a>
+          </li>
+          <li className="flex items-center gap-2">
+            <Mail className="h-4 w-4 shrink-0 text-primary" />
+            <a
+              href="mailto:info@radifylighting.in"
+              className="hover:text-primary transition-colors"
+            >
+              info@radifylighting.in
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div className="border-t border-border">
+      <div className="container mx-auto px-4 lg:px-8 py-4 text-center text-xs text-muted-foreground">
+        © {new Date().getFullYear()} Radify Lighting Solutions. All rights
+        reserved.
+      </div>
+    </div>
+  </footer>
+);
+
+export default Footer;
